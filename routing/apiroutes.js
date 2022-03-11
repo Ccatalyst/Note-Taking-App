@@ -32,6 +32,10 @@ router.delete("/notes/:id", (req, res) => {
 			keepArray.push(dataBase[i]);
 		}
 	}
+	dataBase = keepArray;
+	fs.writeFileSync("./db/db.json", JSON.stringify(dataBase));
+	//resends the information to the front end
+	res.json(dataBase);
 });
 
 module.exports = router;

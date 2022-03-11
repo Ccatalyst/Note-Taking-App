@@ -4,7 +4,7 @@ const fs = require("fs");
 const viewRoutes = require("./routing/viewroutes");
 const apiRoutes = require("./routing/apiroutes");
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
